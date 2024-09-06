@@ -48,7 +48,9 @@ import { onMounted, ref } from 'vue';
 const items = ref([]);
 
 onMounted(() => {
+	if(localStorage.getItem('items')){
 	items.value = JSON.parse(localStorage.getItem('items'));
+	}
 });
 
 function add_new() {
